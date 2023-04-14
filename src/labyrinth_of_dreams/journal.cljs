@@ -1,22 +1,21 @@
 (ns labyrinth-of-dreams.journal
   (:require ["react-dom/client" :refer [createRoot]]
             [goog.dom :as gdom]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [labyrinth-of-dreams.journal.ui.header :refer [header]]
+            [labyrinth-of-dreams.journal.ui.main :refer [main]]
+            [labyrinth-of-dreams.journal.ui.sidebar :refer [sidebar]]
+            [labyrinth-of-dreams.journal.ui.footer :refer [footer]]))
 
-(def click-count (r/atom 0))
 
-(defn counting-component []
-  [:div
-   "The atom " [:code "click-count"] " has value: "
-   @click-count ". "
-   [:input {:type "button" :value "Click me!"
-            :on-click #(swap! click-count inc)}]])
 
 (defn app []
-  [:main.container.mx-auto
-   [:h1 "Hello, World!"]
-   [:p "This is a Reagent app."]
-   [counting-component]])
+  [:main.app
+   [:div  [header]]
+   [:div.body-div 
+    [sidebar] [main]
+    ]
+   [:div [footer]]])
 
 
 (defonce root (createRoot (gdom/getElement "app")))
