@@ -1,9 +1,10 @@
-(ns labyrinth-of-dreams.journal.ui.sidebar)
+(ns labyrinth-of-dreams.journal.ui.sidebar
+  (:require [labyrinth-of-dreams.journal.ui.common :refer [button]]))
 
 (defn sidebar []
   [:nav.sidebar
-   [:button
-    {:route-params [:create-note]                         ;; <1>
+   [button "Write about it"
+    {:route-params [:create-note]                        
      :class "inverse"}
-    "+ New Entry"]])
+    ]])
 
