@@ -4,7 +4,7 @@
 
 (defonce router 
   (bide/router [["/" :home]
-                ["/journal/new" :create-entry]
+                ["/journal/new" :writer]
                 ["/journal/:entry-id" :edit-entry]]))
 
 (defn navigate! [route-params]
