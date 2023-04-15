@@ -1,5 +1,5 @@
 (ns labyrinth-of-dreams.journal.event-handlers.routes
-  (:require [learn-cljs.notes.state :refer [register-handler!]]))
+  (:require [labyrinth-of-dreams.journal.state :refer [register-handler!]]))
 
 (register-handler! 
  :route/navigated

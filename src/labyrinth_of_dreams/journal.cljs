@@ -6,7 +6,8 @@
             [labyrinth-of-dreams.journal.ui.main :refer [main]]
             [labyrinth-of-dreams.journal.ui.sidebar :refer [sidebar]]
             [labyrinth-of-dreams.journal.ui.footer :refer [footer]]
-            [labyrinth-of-dreams.journal.routes :as routes]))
+            [labyrinth-of-dreams.journal.routes :as routes]
+            [labyrinth-of-dreams.journal.event-handlers.core]))
 
 
 
