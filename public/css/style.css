@@ -100,6 +100,16 @@ h1 {
     -webkit-font-smoothing: antialiased;
     }
 
+.subtitle {
+    font-family: 'Josefin Slab', serif;
+    font-size: 22px;
+    width: 40%;
+    margin: 15px auto;
+    line-height: 1.2;
+    text-align: justify;
+    }
+
+
 .main-textarea {
     font-family: 'Josefin Slab', serif;
     font-size: 22px;
