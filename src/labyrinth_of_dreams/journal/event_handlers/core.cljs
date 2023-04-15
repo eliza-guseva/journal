@@ -1,0 +1,1 @@
+(ns labyrinth-of-dreams.journal.event-handlers.core)

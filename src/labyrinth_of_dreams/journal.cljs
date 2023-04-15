@@ -5,7 +5,8 @@
             [labyrinth-of-dreams.journal.ui.header :refer [header]]
             [labyrinth-of-dreams.journal.ui.main :refer [main]]
             [labyrinth-of-dreams.journal.ui.sidebar :refer [sidebar]]
-            [labyrinth-of-dreams.journal.ui.footer :refer [footer]]))
+            [labyrinth-of-dreams.journal.ui.footer :refer [footer]]
+            [labyrinth-of-dreams.journal.routes :as routes]))
 
 
 
@@ -19,6 +20,11 @@
 
 
 (defonce root (createRoot (gdom/getElement "app")))
+
+(defonce initialized? 
+  (do 
+    (routes/initialize!)
+    true))
 
 (defn init
   []
