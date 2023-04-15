@@ -4,8 +4,7 @@
 (def click-count (r/atom 0))
 
 (defn counting-component []
-  [:div
-   [:input {:type "text"}]])
+   [:textarea.main-textarea {:placeholder "Write about it"}])
 
 (defn main[]
   [:div.main
