@@ -3,7 +3,7 @@
             [labyrinth-of-dreams.journal.events :as events]))
 
 (def initial-state
-  {:current-route [:home]
+  {:current-route [:writer]
    :notifications {:messages []
                    :next-id 0}
    :data {:notes {}

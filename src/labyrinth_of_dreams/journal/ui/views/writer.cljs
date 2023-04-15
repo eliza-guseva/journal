@@ -1,7 +1,4 @@
-(ns labyrinth-of-dreams.journal.ui.views.writer
-  (:require [reagent.core :as r]
-            [labyrinth-of-dreams.journal.state :refer [app]]
-            [labyrinth-of-dreams.journal.ui.common :refer [button]]))
+(ns labyrinth-of-dreams.journal.ui.views.writer)
 
 (defn writer []
   [:div.writer
