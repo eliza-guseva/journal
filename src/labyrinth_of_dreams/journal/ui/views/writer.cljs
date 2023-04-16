@@ -22,7 +22,10 @@
       ]]))
 
 (defn submit-button [data text]
-  (button text {:dispatch [:notes/create @data]} "submit-entry"))
+  (button text
+          :dispatch [:notes/create @data]
+          :class "submit-entry"
+          ))
 
 (defn writer []
   (let [form-data (r/cursor app [:entry-form])]

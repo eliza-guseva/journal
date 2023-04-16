@@ -5,4 +5,6 @@
 (defn home []
   [:div.home.hero
    [:h1.title "Labyrinth of Dreams"]
-   (button "Write about it..." [:writer] "inverse")])
+   (button "Write about it..." 
+           :route-params [:writer]
+           :class "inverse")])
