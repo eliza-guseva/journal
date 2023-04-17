@@ -109,6 +109,16 @@ h1 {
     text-align: justify;
     }
 
+.any-text {
+    font-family: 'Josefin Slab', serif;
+    font-size: 22px;
+    width: 100%;
+    margin: 15px auto;
+    line-height: 1.2;
+    background-color: rgb(195, 193, 212);
+    border: 3px solid rgb(129, 141, 164);
+    border-radius: 8px;
+    }
 
 .main-textarea {
     font-family: 'Josefin Slab', serif;
@@ -131,4 +141,19 @@ h1 {
     align-items: stretch;
     justify-content: space-between;
     width: 40%;
+    }
+
+button {
+    font-family: 'Josefin Slab', serif;
+    font-size: 22px;
+    width: 102%;
+    height: 50px;
+    margin: 15px auto;
+    line-height: 1.2;
+    text-align: center;
+    background-color: rgb(195, 193, 212);
+    display: block;
+    resize: none;
+    border: 3px solid rgb(129, 141, 164);
+    border-radius: 8px;
     }

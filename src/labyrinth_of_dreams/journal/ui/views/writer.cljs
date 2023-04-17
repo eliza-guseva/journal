@@ -7,6 +7,15 @@
   (fn [e]
     (swap! data assoc key (.. e -target -value))))
 
+(defn input [data key label]
+  (let [id (str "field-" (name key))]
+    [:div.field
+     [:div.control
+      [:input.any-text {:id id
+               :type "text"
+               :on-change #(swap! data assoc key (.. % -target -value))
+               :value (get @data key "")}]]]))
+
 (defn textarea [data key label]
   (let [id (str "field-" (name key))]
     [:div.field
@@ -34,5 +43,6 @@
 (defn writer []
   (let [form-data (r/cursor app [:entry-form])]
      [:form.entry-form
+      (input form-data :title "Title")
       (textarea form-data :content "")
       (submit-button form-data)]))
