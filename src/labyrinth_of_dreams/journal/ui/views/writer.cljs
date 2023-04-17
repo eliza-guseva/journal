@@ -21,14 +21,18 @@
    ]
       ]]))
 
-(defn submit-button [data text]
-  (button text
-          :dispatch [:notes/create @data]
-          :class "submit-entry"
-          ))
+(defn is-new? [data]
+  (js/console.log (pr-str data))
+  (-> data :id nil?))
+
+(defn submit-button [data]
+  (let [[action text] (if (is-new? @data)
+                        [:notes/create "Create"]
+                        [:notes/update "Save"])]
+    [button text {:dispatch [action @data]}]))
 
 (defn writer []
   (let [form-data (r/cursor app [:entry-form])]
      [:form.entry-form
       (textarea form-data :content "")
-      (submit-button form-data "Save")]))
+      (submit-button form-data)]))

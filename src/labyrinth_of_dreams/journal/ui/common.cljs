@@ -3,7 +3,7 @@
 
 (defn handle-navigate [route-params]
   (fn [event]
-    (event/prevent-default event)
+    (.preventDefault event)
     (dispatch! :route/navigate route-params)))
 
 (defn handle-dispatch [command-data]

@@ -13,6 +13,12 @@
 (defn handle-create-note! [note]
   (api/create-note! note))
 
+(defn handle-add-notification! [notification]
+  (emit! :notification/added notification))
+
+(defn handle-remove-notification! [id]
+  (emit! :notification/removed id))
+
 (defn dispatch!
   ([command] (dispatch! command nil))
   ([command payload]
@@ -21,6 +27,9 @@
         :test/hello (handle-test-hello! payload)
         :route/navigate (handle-navigate! payload)
         :notes/create (handle-create-note! payload)
+
+        :notification/add (handle-add-notification! payload)
+        :notification/remove (handle-remove-notification! payload)
 
         (js/console.error (str "Error: unhandled command: " command)))
      0))
