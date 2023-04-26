@@ -1,4 +1,6 @@
-(ns labyrinth-of-dreams.journal.event-handlers.api-data)
+(ns labyrinth-of-dreams.journal.event-handlers.api-data
+  (:require [labyrinth-of-dreams.journal.command :refer [dispatch!]]
+            [labyrinth-of-dreams.journal.state :refer [register-handler!]]))
 
 #_(
   ; notes look like:
@@ -46,3 +48,15 @@
       (make-index links
                   :index-fn :tag-id
                   :value-fn :note-id)}}))
+
+(register-handler!
+ :note/created
+ (fn [db payload]
+   (let [{:keys [id title]} payload]
+    ;;  (dispatch! :notification/add
+    ;;             {:type :info
+    ;;              :text (str "Note created: " title)})
+     (dispatch! :route/navigate                            
+                [:edit-note {:note-id id}])
+     (assoc-in db [:data :notes id]                        
+               (dissoc payload :tags)))))
